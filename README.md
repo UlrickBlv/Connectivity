@@ -2,6 +2,10 @@
 
 Les langages utilisés sont : PHP, HTML et CSS
 Mon environnement de développement : Apache Netbeans
+Pour mettre le serveur en local, j'ai utilisé : MAMP.
+
+J'ai utilisé PhpMyAdmin qui est une application Web de gestion pour les systèmes de gestion de base de données
+
 Ma base de données : SQL
 Son nom est : Hello.sql sur GitHub mais de nom Hello-Design dans le fichié .
 
