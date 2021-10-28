@@ -9,8 +9,11 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données : `Hello-Design`
+-- Database: `Hello-Design`
 --
+CREATE DATABASE IF NOT EXISTS `Hello-Design` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `Hello-Design`;
+
 
 -- --------------------------------------------------------
 
