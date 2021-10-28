@@ -7,7 +7,6 @@
 require_once("include/PdoMiniChat.php");
 require_once ("include/fct.php");
 
-session_start();
 $pdo = PdoMiniChat::getMiniChat();
 $estConnecte = estConnecte();
 
