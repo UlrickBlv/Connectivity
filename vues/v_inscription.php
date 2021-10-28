@@ -1,14 +1,4 @@
-
-<head>
-              <title>Inscription</title>
-              <meta charset= "utf-8">
-              <link type="text/css" rel="stylesheet" href="styles/form.css">
-</head>
-
-     
- 
- 
-<div class="inscription"> 
+   <div class="inscription"> 
      <section class="inscription">
  <div>
      
