@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
               <title>Connectivity</title>
-              <meta charset= "utf-8">
-              <link type="text/css" rel="stylesheet" href="styles/form.css">
-              </head>
-            
+ 
  <div class="connexion">   
     <section class="login">
     <div>
@@ -29,5 +23,4 @@
  </div>
  </section>
 </div>
-</html>
 
