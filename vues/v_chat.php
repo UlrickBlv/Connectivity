@@ -1,9 +1,3 @@
-<?php 
-$h = date("H")+1;
-$min = date("i");
-$sec = date("s");
-//header("refresh: 3");
-?>
 <meta charset="UTF-8">
 <link type="text/css" rel="stylesheet" href="styles/form.css">  
 <html>
@@ -11,10 +5,17 @@ $sec = date("s");
               <title>Connectivity</title>
                   
          </head> 
-
          <body>  
+             <?php
+             $nom =$user['PSEUDO']?>
+             <h1> Hello <?php  echo "$nom"?></h1>
+           
          
-      
+           
+            
+             
+             <a href="vues/v_deconnexion.php">Déconnexion</a>
+             
     
        </body>
 </html>

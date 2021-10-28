@@ -2,6 +2,8 @@
 
 
 $pdo = PdoMiniChat::getMiniChat();
+$key_password = "Guadeloupe";
+
 
 if(!isset($_REQUEST['action'])){
     $_REQUEST['action'] = 'demandeCo';
@@ -12,15 +14,12 @@ $action = $_REQUEST['action'];
 
 switch($action){
     
-    case'verify':{ 
-     include("vues/v_verify.php");
-     break;
-    }
     
     case'connexion':{
-        $pseudo = $_REQUEST['pseudo'];
-        $mdp = $_REQUEST['mdp'];
-        $user = $pdo->getInfoUser($pseudo,$mdp);
+        $pseudo = htmlspecialchars($_REQUEST['pseudo']);
+        $mdp = htmlspecialchars($_REQUEST['mdp']);
+        $encrypted_chaine = openssl_encrypt($mdp, "AES-128-ECB" ,$key_password);
+        $user = $pdo->getInfoUser($pseudo,$encrypted_chaine);
         if(!is_array($user) || empty($pseudo) || empty($mdp) ){
             ajouterErreur("Login ou mdp incorrect");
             include("vues/v_erreur.php");
@@ -28,12 +27,8 @@ switch($action){
             break;
         }
         else {
-            //ob_start();
             connecter($mdp, $pseudo);
-            include ("vues/v_chat.php");
-            //$action = "affiche";
-            //header('Refresh: 0;URL=index.php?uc=mini_chat&action=affiche');
-            //ob_enf_flush();
+            include ("vues/v_chat.php"); 
             break;
         }
         
@@ -61,8 +56,12 @@ switch($action){
         
         $us = $pdo->SelectUser($pseu);
         
+        $encrypted_chaine = openssl_encrypt($mdp, "AES-128-ECB" ,$key_password);
+    
+
+        
         if ($us == true ){
-        $pdo->insertUser($pseu,$mdp,$mail);
+        $pdo->insertUser($pseu,$encrypted_chaine,$mail);
         include("vues/v_connexion.php");
         }
         else {
@@ -70,30 +69,13 @@ switch($action){
             include("vues/v_erreur.php");*/
             echo("User déja dans la BDD");
             include("vues/v_inscription.php");
-           
-            
+               
         }
             }
         }
       break;
     }
-    
-    
-  
-    
-    
-    case'pdf':{
-        $adr = $_SERVER['REMOTE_ADDR'];
-        $pseu2 =  $_SESSION['PSEUDO'];
-        $mdp2 =  $_SESSION['MDP'];
-        $ipAll = $pdo->getInfoAllUser();
-        //$pdo->getInfoAllUser()
-        include('vues/pdf.php');
-        
-        break;
-    }
-    
-    
+   
     case'deconnexion':{
             session_destroy();
             include("vues/v_connexion.php");

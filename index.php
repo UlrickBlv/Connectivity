@@ -6,7 +6,6 @@
 <?php
 require_once("include/PdoMiniChat.php");
 require_once ("include/fct.php");
-//include("js/heure.js");
 
 session_start();
 $pdo = PdoMiniChat::getMiniChat();
