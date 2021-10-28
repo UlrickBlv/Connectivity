@@ -1,6 +1,6 @@
 # Connectivity
 
-Les langages utilisés sont : PHP, HTML et CSS
+Les langages utilisés sont : PHP, HTML et CSS.
 Mon environnement de développement : Apache Netbeans
 Pour mettre le serveur en local, j'ai utilisé : MAMP.
 
@@ -25,3 +25,5 @@ Dans le fichié PdoMiniChat, le serveur, la bdd, le mot de passe et le user ont 
 Attention : sur les windows  private static $mdp = 'root'; doit être changé à  private static $mdp = '';
 
 Les fonctions sont égelemnt dans PdoMiniChat.
+
+Si un mauvais mot de passe ou pseudo sont rentrés, une erreur est générée. Lorsqu'un nouveau compte est créé mais que le pseudo existe déjà une erreur est générée.
