@@ -1,4 +1,7 @@
-	<head>
+<?php
+session_start();
+?>
+<head>
               <title>Connectivity</title>
               <meta charset= "utf-8">
               <link type="text/css" rel="stylesheet" href="styles/form.css">
