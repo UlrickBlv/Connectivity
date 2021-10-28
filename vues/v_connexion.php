@@ -1,6 +1,5 @@
-<?php
-session_start();
-?>
+<!DOCTYPE html>
+<html>
 <head>
               <title>Connectivity</title>
               <meta charset= "utf-8">
@@ -30,5 +29,5 @@ session_start();
  </div>
  </section>
 </div>
-
+</html>
 
